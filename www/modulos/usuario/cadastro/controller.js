@@ -1,3 +1,3 @@
-angular.module('blogjs.usuario').controller(function($scope){
+angular.module('blogjs.usuario').controller('CadastroUsuarioController', function($scope){
 
 });

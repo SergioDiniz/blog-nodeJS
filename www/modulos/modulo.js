@@ -1,1 +1,1 @@
-angular.module('blogjs', ['ngRoute', 'ui.bootstrap']);
+angular.module('blogjs', ['ngRoute', 'ui.bootstrap', 'blogjs.usuario']);

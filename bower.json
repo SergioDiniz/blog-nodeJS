@@ -10,6 +10,7 @@
   "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
   "dependencies": {
     "angular": "angularjs#^1.5.8",
+    "angular-route": "^1.5.8",
     "angular-bootstrap": "^2.2.0",
     "bootstrap": "^3.3.7"
   },
