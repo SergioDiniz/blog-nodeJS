@@ -1,14 +1,14 @@
 {
   "name": "blog-nodeJS",
-  "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
+  "version": "0.0.1",
+  "description": "blog created using nodeJS",
+  "main": "index.js",
   "authors": [
     "Sergio Diniz <sergiodinizsh@gmail.com>"
   ],
-  "description": "blog created using nodeJS",
-  "main": "",
   "license": "MIT",
-  "version": "0.0.1",
-  "dependencies":{
-    
+  "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
+  "dependencies": {
+    "angular": "angularjs#^1.5.8"
   }
 }

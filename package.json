@@ -1,0 +1,22 @@
+{
+  "name": "blogJS",
+  "version": "1.0.0",
+  "description": "blog created using nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sergiodiniz@github.com/SergioDiniz/blog-nodeJS.git"
+  },
+  "author": "SergioDiniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergioDiniz/blog-nodeJS/issues"
+  },
+  "homepage": "https://github.com/SergioDiniz/blog-nodeJS#readme",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
+}
