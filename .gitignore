@@ -1,0 +1,12 @@
+### Bower ###
+bower_components
+libs
+.bower-cache
+.bower-registry
+.bower-tmp
+
+
+
+### Node ###
+# Dependency directories
+node_modules
