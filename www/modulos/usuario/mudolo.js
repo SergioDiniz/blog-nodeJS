@@ -8,4 +8,9 @@ angular.module('blogjs.usuario').config(function($routeProvider){
       templateUrl: 'modulos/usuario/cadastro/view.html'
     })
 
+    .when('/login', {
+      controller: 'LoginUsuarioController',
+      templateUrl: 'modulos/usuario/login/view.html'
+    })
+
 })
