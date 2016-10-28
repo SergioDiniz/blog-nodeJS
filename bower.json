@@ -9,14 +9,16 @@
   "license": "MIT",
   "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
   "dependencies": {
-    "angular": "angularjs#^1.5.8"
+    "angular": "angularjs#^1.5.8",
+    "angular-bootstrap": "^2.2.0",
+    "bootstrap": "^3.3.7"
   },
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "libs",
+    "www/libs",
     "test",
     "tests"
   ]

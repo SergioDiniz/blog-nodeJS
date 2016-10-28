@@ -11,7 +11,7 @@
     "url": "git+https://sergiodiniz@github.com/SergioDiniz/blog-nodeJS.git"
   },
   "author": "SergioDiniz",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SergioDiniz/blog-nodeJS/issues"
   },

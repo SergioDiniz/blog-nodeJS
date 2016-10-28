@@ -1,6 +1,6 @@
 ### Bower ###
 bower_components
-libs
+www/libs
 .bower-cache
 .bower-registry
 .bower-tmp
