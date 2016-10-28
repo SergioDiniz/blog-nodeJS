@@ -1,0 +1,14 @@
+{
+  "name": "blog-nodeJS",
+  "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
+  "authors": [
+    "Sergio Diniz <sergiodinizsh@gmail.com>"
+  ],
+  "description": "blog created using nodeJS",
+  "main": "",
+  "license": "MIT",
+  "version": "0.0.1",
+  "dependencies":{
+    
+  }
+}
