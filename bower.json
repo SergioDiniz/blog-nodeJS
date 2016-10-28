@@ -1,5 +1,5 @@
 {
-  "name": "blog-nodeJS",
+  "name": "blog-nodejs",
   "version": "0.0.1",
   "description": "blog created using nodeJS",
   "main": "index.js",
@@ -10,5 +10,14 @@
   "homepage": "https://github.com/SergioDiniz/blog-nodeJS",
   "dependencies": {
     "angular": "angularjs#^1.5.8"
-  }
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ]
 }
