@@ -1,0 +1,19 @@
+<h1 class="text-center">Visualizar Posts</h1>
+
+<div class="col-md-offset-2 col-md-8">
+  <a href="#/usuario/{{usuario.id}}/posts">voltar para todos os  post</a>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">{{post.titulo}}</div>
+    <div class="panel-body">
+      <p>
+        {{post.descricao}}
+      </p>
+      <small>{{post.dataPostagem | date:'hh:mm dd/MM/yyyy'}}</small>
+    </div>
+  </div>
+  <br>
+
+
+</div>

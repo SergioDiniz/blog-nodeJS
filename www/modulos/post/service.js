@@ -11,6 +11,14 @@ angular.module('blogjs.post').factory('posts', function(){
     return getPosts().reverse();
   }
 
+  var buscarPost = function(id){
+    var encontrado = getPosts().find(function(bjo){
+      return bjo.id === id;
+    });
+
+    return encontrado;
+  }
+
 
   var getPosts = function(){
     var dados = localStorage.getItem('posts');
@@ -45,7 +53,8 @@ angular.module('blogjs.post').factory('posts', function(){
 
   return {
     cadastrar:cadastrar,
-    listar:listar
+    listar:listar,
+    buscarPost:buscarPost
   }
 
 });

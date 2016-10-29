@@ -13,4 +13,9 @@ angular.module('blogjs.post').config(function($routeProvider){
       templateUrl: 'modulos/post/cadastro/view.html'
     })
 
+    .when('/usuario/:id/post/:postId', {
+      controller: 'VisualizarPostController',
+      templateUrl: 'modulos/post/visualizar/view.html'
+    })
+
 })
