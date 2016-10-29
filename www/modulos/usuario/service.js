@@ -27,6 +27,14 @@ angular.module('blogjs.usuario').factory('usuarios', function(){
   }
 
 
+  var usuarioLogado = function(){
+    return JSON.parse(localStorage.getItem('usuarioSession'));
+  }
+
+  var finalizarSessao = function(){
+    return localStorage.removeItem('usuarioSession');
+  }
+
   var getUsuarios = function(){
     var dados = localStorage.getItem('usuarios');
     if (dados){
@@ -65,7 +73,9 @@ angular.module('blogjs.usuario').factory('usuarios', function(){
   return {
     cadastrar:cadastrar,
     autenticaUsuario:autenticaUsuario,
-    buscarUsuario:buscarUsuario
+    buscarUsuario:buscarUsuario,
+    usuarioLogado:usuarioLogado,
+    finalizarSessao:finalizarSessao
   }
 
 });

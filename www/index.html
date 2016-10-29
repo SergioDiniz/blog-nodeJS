@@ -20,18 +20,25 @@
           </span> <span class="icon-bar"></span>
         </button> <a href="#" class="navbar-brand">BlogJS</a>
       </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-        <ul class="nav navbar-nav">
+      <div class="collapse navbar-collapse" ng-controller="MenuController">
+        <ul class="nav navbar-nav" ng-hide="usuarioLogado">
           <li>
             <a href="#/usuario/cadastro">Cadastre-se</a>
           </li>
           <li>
             <a href="#/login">Login</a>
           </li>
+        </ul>
+
+        <ul class="nav navbar-nav" ng-show="usuarioLogado">
           <li>
-            <a href="#/sair">Sair</a>
+            <a href="#/usuario/{{usuarioLogado.id}}/posts">Meus Posts</a>
+          </li>
+          <li style="cursor:pointer;" >
+            <a ng-click="finalizarSessao()">Sair</a>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
@@ -56,6 +63,9 @@
 
 
   <script src="modulos/modulo.js"></script>
+  <!-- Controller do Menu -->
+  <script src="modulos/menu/controller.js"></script>
+
   <!-- Modulos do Usuario -->
   <script src="modulos/usuario/mudolo.js"></script>
   <script src="modulos/usuario/service.js"></script>
