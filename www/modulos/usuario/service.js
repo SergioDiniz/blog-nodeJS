@@ -1,8 +1,7 @@
 angular.module('blogjs.usuario').factory('usuarios', function(){
 
   var cadastrar = function(usuario){
-    var currentId = getCurrentId() + 1;
-    usuario.id = currentId;
+    usuario.id = getCurrentId() + 1;
 
     setUsuario(usuario);
   }
@@ -28,7 +27,7 @@ angular.module('blogjs.usuario').factory('usuarios', function(){
   }
 
 
-  var getUsuarios = function(id){
+  var getUsuarios = function(){
     var dados = localStorage.getItem('usuarios');
     if (dados){
       return JSON.parse(dados);
@@ -43,7 +42,6 @@ angular.module('blogjs.usuario').factory('usuarios', function(){
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
     setCurrentId(usuario.id);
-    console.log('id: ' + usuario.id);
   }
 
   var getCurrentId = function(){

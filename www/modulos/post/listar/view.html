@@ -3,14 +3,6 @@
 <div class="col-md-offset-2 col-md-8">
   <a href="#/usuario/{{usuario.id}}/posts/novo">novo post</a>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Titulo</div>
-    <div class="panel-body">
-      descricao
-    </div>
-  </div>
-  <br>
-
   <div ng-repeat="post in posts">
     <div class="panel panel-default">
       <div class="panel-heading">{{post.titulo}}</div>
@@ -23,4 +15,5 @@
     </div>
     <br>
   </div>
+  
 </div>

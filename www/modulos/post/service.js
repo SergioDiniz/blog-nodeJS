@@ -1,18 +1,47 @@
 angular.module('blogjs.post').factory('posts', function(){
 
-  var posts = [];
-  var id = 0;
-
   var cadastrar = function(post){
-    id++;
-    post.id = id;
+    post.id = getCurrentPostId() + 1;
     post.dataPostagem = new Date();
-    posts.push(post);
+
+    setPost(post);
   }
 
   var listar = function(id){
-    return posts;
+    return getPosts().reverse();
   }
+
+
+  var getPosts = function(){
+    var dados = localStorage.getItem('posts');
+    if (dados){
+      return JSON.parse(dados);
+    }else{
+      return [];
+    }
+  }
+
+  var setPost = function(post){
+    var posts = getPosts();
+    posts.push(post);
+    localStorage.setItem('posts', JSON.stringify(posts));
+
+    setCurrentPostId(post.id);
+  }
+
+  var getCurrentPostId = function(){
+    var id = localStorage.getItem('postId');
+    if (id){
+      return parseInt(id);
+    } else {
+      return 0;
+    }
+  }
+
+  var setCurrentPostId = function(id){
+    localStorage.setItem('postId', id);
+  }
+
 
   return {
     cadastrar:cadastrar,
