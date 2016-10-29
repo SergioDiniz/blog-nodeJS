@@ -1,28 +1,67 @@
 angular.module('blogjs.usuario').factory('usuarios', function(){
 
-  var usuarios = [];
-  var usuarioId = 0;
-
   var cadastrar = function(usuario){
-    usuarioId++;
-    usuario.id = usuarioId;
-    usuarios.push(usuario);
+    var currentId = getCurrentId() + 1;
+    usuario.id = currentId;
+
+    setUsuario(usuario);
   }
 
   var autenticaUsuario = function(usuario){
-    var encontrado = usuarios.find(function(obj){
+    var encontrado = getUsuarios().find(function(obj){
       return obj.login === usuario.login && obj.senha === usuario.senha;
     });
+
+    if (encontrado){
+      setUsuarioSession(encontrado);
+    }
 
     return encontrado;
   }
 
   var buscarUsuario = function(id){
-    var encontrado = usuarios.find(function(obj){
+    var encontrado = getUsuarios().find(function(obj){
       return obj.id === id;
     });
 
     return encontrado;
+  }
+
+
+  var getUsuarios = function(id){
+    var dados = localStorage.getItem('usuarios');
+    if (dados){
+      return JSON.parse(dados);
+    }else{
+      return [];
+    }
+  }
+
+  var setUsuario = function(usuario){
+    var usuarios = getUsuarios();
+    usuarios.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    setCurrentId(usuario.id);
+    console.log('id: ' + usuario.id);
+  }
+
+  var getCurrentId = function(){
+    var id = localStorage.getItem('currentId');
+    if (id){
+      return parseInt(id);
+    } else {
+      return 0;
+    }
+  }
+
+  var setCurrentId = function(id){
+    localStorage.setItem('currentId', id);
+  }
+
+
+  var setUsuarioSession = function(usuario){
+    localStorage.setItem('usuarioSession', JSON.stringify(usuario));
   }
 
   return {
