@@ -1,4 +1,4 @@
-angular.module('blogjs.usuario').controller('LoginUsuarioController', function($scope, $location, usuarios){
+angular.module('blogjs.usuario').controller('LoginUsuarioController', function($scope, $rootScope, $location, usuarios){
 
   $scope.usuario = {};
 
@@ -7,6 +7,8 @@ angular.module('blogjs.usuario').controller('LoginUsuarioController', function($
 
     if(autenticaUsuario){
       $location.path('usuario/' + autenticaUsuario.id + '/posts');
+
+      $rootScope.$broadcast('usuario.entrou', autenticaUsuario);
     }else{
       alert('Dados invalidos!');
     }

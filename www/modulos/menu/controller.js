@@ -4,11 +4,24 @@ angular.module('blogjs').controller('MenuController', function($scope, $location
     return usuarios.usuarioLogado();
   }
 
+  $scope.usuarioLogado = usuarioLogado();
+
   $scope.finalizarSessao = function(){
+    sair();
+  }
+
+  var sair = function(){
     usuarios.finalizarSessao();
+    $scope.usuarioLogado = null;
     $location.path('/');
   }
 
-  $scope.usuarioLogado = usuarioLogado();
+  $scope.$on('usuario.entrou', function(evento, usuario){
+    $scope.usuarioLogado = usuario;
+  });
+
+  $scope.$on('usuario.saiu', function(evento){
+    sair();
+  });
 
 });
