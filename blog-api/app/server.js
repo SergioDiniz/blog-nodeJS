@@ -7,6 +7,7 @@ app.use(dobyParser.json());
 
 
 
+app.get('/v1/usuarios', cadastroController.listar);
 app.post('/v1/usuarios', cadastroController.cadastrar);
 
 
