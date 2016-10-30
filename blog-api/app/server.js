@@ -1,5 +1,5 @@
 var express = require('express');
-var cadastroController = require('./usuario/cadastroController');
+var usuarioController = require('./usuario/controller');
 var dobyParser = require('body-parser');
 var cors = require('cors');
 
@@ -9,8 +9,9 @@ app.use(cors());
 
 
 
-app.get('/v1/usuarios', cadastroController.listar);
-app.post('/v1/usuarios', cadastroController.cadastrar);
+app.get('/v1/usuarios', usuarioController.listar);
+app.post('/v1/usuarios', usuarioController.cadastrar);
+app.post('/v1/usuarios/auth', usuarioController.autenticar);
 
 
 app.listen(9000, function(){
