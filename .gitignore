@@ -1,12 +1,15 @@
+### macOS ###
+*.DS_Store
+
+### Cliente ###
 ### Bower ###
 bower_components
-www/libs
+blog-cliente/www/libs
 .bower-cache
 .bower-registry
 .bower-tmp
 
 
-
 ### Node ###
 # Dependency directories
-node_modules
+blog-cliente/node_modules
