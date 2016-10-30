@@ -65,7 +65,6 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
 
 
   var setUsuarioSession = function(usuario){
-    console.log("setUsuarioSession" + usuario);
     localStorage.setItem('usuarioSession', JSON.stringify(usuario));
   }
 

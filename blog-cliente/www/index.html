@@ -30,17 +30,22 @@
           </li>
         </ul>
 
-        <ul class="nav navbar-nav" ng-show="usuarioLogado">
-          <li>
-            <a href="#/usuario/{{usuarioLogado.id}}/posts">Meus Posts</a>
-          </li>
-          <li style="cursor:pointer;" >
-            <a ng-click="finalizarSessao()">Sair</a>
-          </li>
-          <li class="text-right" >
-            <a href="#" class="navbar-brand">{{usuarioLogado.nome}}</a>
-          </li>
-        </ul>
+        <div ng-show="usuarioLogado">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#/usuario/{{usuarioLogado.id}}/posts">Meus Posts</a>
+            </li>
+            <li style="cursor:pointer;" >
+              <a ng-click="finalizarSessao()">Sair</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="navbar-text" ng-bind="usuarioLogado.nome" ></p>
+            </li>
+          </ul>
+        </div>
 
       </div>
     </div>
