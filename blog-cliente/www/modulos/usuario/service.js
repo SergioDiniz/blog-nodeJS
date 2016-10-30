@@ -1,9 +1,7 @@
-angular.module('blogjs.usuario').factory('usuarios', function(){
+angular.module('blogjs.usuario').factory('usuarios', function($http){
 
   var cadastrar = function(usuario){
-    usuario.id = getCurrentId() + 1;
-
-    setUsuario(usuario);
+    return $http.post('http://localhost:9000/v1/usuarios', usuario);
   }
 
   var autenticaUsuario = function(usuario){

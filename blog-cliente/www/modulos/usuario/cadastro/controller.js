@@ -4,8 +4,18 @@ angular.module('blogjs.usuario').controller('CadastroUsuarioController', functio
 
   $scope.cadastrar = function(usuario){
     if(valido(usuario)){
-      usuarios.cadastrar(usuario);
-      $location.path('login');
+      var promise = usuarios.cadastrar(usuario);
+
+      // success
+      promise.then(function(response){
+        $location.path('login');
+      });
+
+      // Error
+      promise.catch(function(response){
+        console.log("Error: Status:" + response.status + ", Data: " + response.data);
+      });
+
     } else {
       alert('Dados Invalidos!');
     }

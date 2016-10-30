@@ -1,9 +1,11 @@
 var express = require('express');
 var cadastroController = require('./usuario/cadastroController');
 var dobyParser = require('body-parser');
+var cors = require('cors');
 
 var app = express();
 app.use(dobyParser.json());
+app.use(cors());
 
 
 
