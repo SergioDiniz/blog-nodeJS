@@ -1,15 +1,36 @@
 ### macOS ###
 *.DS_Store
 
+
+###############################################################################
+
+
 ### Cliente ###
 ### Bower ###
 bower_components
 blog-cliente/www/libs
-.bower-cache
-.bower-registry
-.bower-tmp
+blog-cliente/.bower-cache
+blog-cliente/.bower-registry
+blog-cliente/.bower-tmp
 
 
 ### Node ###
 # Dependency directories
 blog-cliente/node_modules
+
+
+###############################################################################
+
+
+### API ###
+### Bower ###
+bower_components
+blog-api/app/libs
+blog-api/.bower-cache
+blog-api/.bower-registry
+blog-api/.bower-tmp
+
+
+### Node ###
+# Dependency directories
+blog-api/node_modules
