@@ -1,6 +1,7 @@
 angular.module('blogjs').controller('MenuController', function($scope, $location, usuarios){
 
   var usuarioLogado = function(){
+    console.log('setando usuario inicio.');
     return usuarios.usuarioLogado();
   }
 

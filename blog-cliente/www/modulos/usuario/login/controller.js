@@ -3,15 +3,18 @@ angular.module('blogjs.usuario').controller('LoginUsuarioController', function($
   $scope.usuario = {};
 
   $scope.entrar = function(usuario){
-    var autenticaUsuario = usuarios.autenticaUsuario(usuario);
+    var promise = usuarios.autenticaUsuario(usuario);
 
-    if(autenticaUsuario){
-      $location.path('usuario/' + autenticaUsuario.id + '/posts');
+    promise.then(function(response){
+      var usuario = response.data;
+      $rootScope.$broadcast('usuario.entrou', usuario);
+      $location.path('usuario/' + usuario.id + '/posts');
+    });
 
-      $rootScope.$broadcast('usuario.entrou', autenticaUsuario);
-    }else{
+    promise.catch(function(response){
+      console.error("Error: Status:" + response.status + ", Data: " + response.data);
       alert('Dados invalidos!');
-    }
+    });
   }
 
 })

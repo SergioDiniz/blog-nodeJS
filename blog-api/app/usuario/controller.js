@@ -13,6 +13,7 @@ var autenticar = function(req, res){
   var usuario = req.body;
   var usuarioAutenticado = usuarioService.autenticar(usuario);
   if (usuarioAutenticado){
+    console.log(usuarioAutenticado);
     res.status(200).json(usuarioAutenticado);
   }else{
     res.status(401).end();

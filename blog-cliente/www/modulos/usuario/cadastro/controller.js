@@ -13,7 +13,7 @@ angular.module('blogjs.usuario').controller('CadastroUsuarioController', functio
 
       // Error
       promise.catch(function(response){
-        console.log("Error: Status:" + response.status + ", Data: " + response.data);
+        console.error("Error: Status:" + response.status + ", Data: " + response.data);
       });
 
     } else {

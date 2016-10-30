@@ -5,15 +5,15 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
   }
 
   var autenticaUsuario = function(usuario){
-    var encontrado = getUsuarios().find(function(obj){
-      return obj.login === usuario.login && obj.senha === usuario.senha;
+
+    var autenticado = $http.post('http://localhost:9000/v1/usuarios/auth', usuario);
+
+    autenticado.then(function(response){
+      var usuario = response.data;
+      setUsuarioSession(usuario);
     });
 
-    if (encontrado){
-      setUsuarioSession(encontrado);
-    }
-
-    return encontrado;
+    return autenticado;
   }
 
   var buscarUsuario = function(id){
@@ -65,6 +65,7 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
 
 
   var setUsuarioSession = function(usuario){
+    console.log("setUsuarioSession" + usuario);
     localStorage.setItem('usuarioSession', JSON.stringify(usuario));
   }
 
