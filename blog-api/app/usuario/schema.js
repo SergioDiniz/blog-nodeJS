@@ -15,7 +15,7 @@ var usuarioSchema = new Schema({
     type: String,
     required: true
   }
-})
+});
 
 var Usuario = mongoose.model('usuarios', usuarioSchema);
 
