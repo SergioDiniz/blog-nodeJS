@@ -6,7 +6,14 @@ var cadastrar = function(req, res){
 }
 
 var listar = function(req, res){
-  res.status(200).json(usuarioService.listar());
+  usuarioService.listar(
+  function(usuarios){
+    res.status(200).json(usuarios);
+  }
+  , function(erro){
+    res.status(400).json(erro);
+  }
+  );
 }
 
 var autenticar = function(req, res){

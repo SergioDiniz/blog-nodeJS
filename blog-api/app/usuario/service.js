@@ -1,3 +1,5 @@
+var Usuario = require('./schema');
+
 var usuarios = [];
 var id = 0;
 
@@ -8,8 +10,19 @@ var cadastrar = function(usuario){
   return usuario;
 }
 
-var listar = function(){
-  return usuarios;
+var listar = function(paraListar, paraErro){
+
+  Usuario
+  .find()
+  .select({nome:true, login:true})
+  .exec(function(err, usuarios){
+   if(err){
+     paraErro(err);
+   }else{
+     paraListar(usuarios);
+   }
+  })
+
 }
 
 var autenticar = function(usuario){

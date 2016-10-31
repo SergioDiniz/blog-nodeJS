@@ -9,6 +9,7 @@ var app = express();
 app.use(dobyParser.json());
 app.use(cors());
 
+mongoose.Promise = global.Promise; //para a mensagem DeprecationWarning: Mongoose: mpromise
 mongoose.connect('mongodb://' + serverConf.getdbuser() + ':' + serverConf.getdbpassword() + '@ds139327.mlab.com:39327/blogjs');
 
 app.get('/v1/usuarios', usuarioController.listar);
