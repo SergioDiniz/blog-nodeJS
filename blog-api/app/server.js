@@ -2,12 +2,14 @@ var express = require('express');
 var usuarioController = require('./usuario/controller');
 var dobyParser = require('body-parser');
 var cors = require('cors');
+var mongoose = require('mongoose');
+var serverConf = require('./serverConf');
 
 var app = express();
 app.use(dobyParser.json());
 app.use(cors());
 
-
+mongoose.connect('mongodb://' + serverConf.getdbuser() + ':' + serverConf.getdbpassword() + '@ds139327.mlab.com:39327/blogjs');
 
 app.get('/v1/usuarios', usuarioController.listar);
 app.post('/v1/usuarios', usuarioController.cadastrar);
