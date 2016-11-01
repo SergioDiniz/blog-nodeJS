@@ -36,6 +36,20 @@ var autenticar = function(req, res){
 
 }
 
+
+var buscar = function(req, res){
+  var id = req.params.id;
+  usuarioService.buscar(id,
+    function(usuarioEncontrado){
+      res.status(200).json(usuarioEncontrado);
+    }
+    , function(erro){
+      res.status(400).json(erro);
+    }
+  );
+}
+
 exports.cadastrar = cadastrar;
 exports.listar = listar;
 exports.autenticar = autenticar;
+exports.buscar = buscar;

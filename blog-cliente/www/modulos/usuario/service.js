@@ -17,11 +17,7 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
   }
 
   var buscarUsuario = function(id){
-    var encontrado = getUsuarios().find(function(obj){
-      return obj.id === id;
-    });
-
-    return encontrado;
+    return $http.get('http://localhost:9000/v1/usuarios/buscar/' + id);
   }
 
 
@@ -41,28 +37,6 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
       return [];
     }
   }
-
-  var setUsuario = function(usuario){
-    var usuarios = getUsuarios();
-    usuarios.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    setCurrentId(usuario.id);
-  }
-
-  var getCurrentId = function(){
-    var id = localStorage.getItem('currentId');
-    if (id){
-      return parseInt(id);
-    } else {
-      return 0;
-    }
-  }
-
-  var setCurrentId = function(id){
-    localStorage.setItem('currentId', id);
-  }
-
 
   var setUsuarioSession = function(usuario){
     localStorage.setItem('usuarioSession', JSON.stringify(usuario));

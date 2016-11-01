@@ -15,6 +15,7 @@ mongoose.connect('mongodb://' + serverConf.getdbuser() + ':' + serverConf.getdbp
 app.get('/v1/usuarios', usuarioController.listar);
 app.post('/v1/usuarios', usuarioController.cadastrar);
 app.post('/v1/usuarios/auth', usuarioController.autenticar);
+app.get('/v1/usuarios/buscar/:id', usuarioController.buscar);
 
 
 app.listen(9000, function(){

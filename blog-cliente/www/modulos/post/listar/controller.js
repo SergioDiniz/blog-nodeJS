@@ -1,4 +1,4 @@
-angular.module('blogjs.post').controller('ListarPostController', function($scope, $routeParams, posts, usuarios){
+angular.module('blogjs.post').controller('ListarPostController', function($scope, $location, $routeParams, posts, usuarios){
 
 
   var carregarPosts = function(){
@@ -6,13 +6,15 @@ angular.module('blogjs.post').controller('ListarPostController', function($scope
   }
 
   var carregarUsuario = function(){
-    var usuario = usuarios.usuarioLogado();
-    if(usuario){
-      $scope.usuario = usuario;
-    } else {
-      alert('Usuario não existe!')
-    }
+    var promise = usuarios.buscarUsuario($routeParams.id);
 
+    promise.then(function(response){
+      $scope.usuario = response.data;
+    });
+
+    promise.catch(function(response){
+      $location.path('/login');
+    });
   }
 
   carregarPosts();
