@@ -5,7 +5,7 @@ angular.module('blogjs.post').controller('VisualizarPostController', function($s
   }
 
   var carregarUsuario = function(){
-    var usuario = usuarios.buscarUsuario(parseInt($routeParams.id));
+    var usuario = usuarios.usuarioLogado();
     if(usuario){
       $scope.usuario = usuario;
     } else {
