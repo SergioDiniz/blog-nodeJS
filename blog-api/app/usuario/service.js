@@ -1,18 +1,20 @@
-var Usuario = require('./schema');
+var UsuarioSchema = require('./schema');
 
-var usuarios = [];
-var id = 0;
 
-var cadastrar = function(usuario){
-  id++;
-  usuario.id = id;
-  usuarios.push(usuario);
-  return usuario;
+
+var cadastrar = function(usuario, quandoForCadastrar, quandoDerErro){
+  new UsuarioSchema(usuario).save(function(erro, resultado){
+    if(erro){
+      quandoDerErro(erro);
+    } else {
+      quandoForCadastrar(resultado);
+    }
+  })
 }
 
 var listar = function(paraListar, paraErro){
 
-  Usuario
+  UsuarioSchema
   .find()
   .select({nome:true, login:true})
   .exec(function(err, usuarios){
@@ -25,12 +27,21 @@ var listar = function(paraListar, paraErro){
 
 }
 
-var autenticar = function(usuario){
-  var autenticado = usuarios.find(function(obj){
-    return obj.login === usuario.login && obj.senha === usuario.senha;
+var autenticar = function(usuario, quandoAutenticar, quandoDerErro){
+  var query = {login:usuario.login, senha:usuario.senha}
+  UsuarioSchema
+  .findOne(query)
+  .select({nome:true, login:true})
+  .exec(function(erro, usuarioAutenticado){
+    if(erro){
+      quandoDerErro(erro);
+    } else if (usuarioAutenticado){
+      quandoAutenticar(usuarioAutenticado);
+    } else{
+      quandoDerErro(new Error("Dados Invalidos!"));
+    }
   });
 
-  return autenticado;
 }
 
 exports.cadastrar = cadastrar;

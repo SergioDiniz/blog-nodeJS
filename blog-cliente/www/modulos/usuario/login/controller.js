@@ -8,7 +8,7 @@ angular.module('blogjs.usuario').controller('LoginUsuarioController', function($
     promise.then(function(response){
       var usuario = response.data;
       $rootScope.$broadcast('usuario.entrou', usuario);
-      $location.path('usuario/' + usuario.id + '/posts');
+      $location.path('usuario/' + usuario._id + '/posts');
     });
 
     promise.catch(function(response){

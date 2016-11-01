@@ -2,7 +2,14 @@ var usuarioService = require('./service');
 
 var cadastrar = function(req, res){
   var usuario = req.body;
-  res.status(201).json(usuarioService.cadastrar(usuario));
+  usuarioService.cadastrar(usuario,
+    function(resultado){
+      res.status(201).json(resultado);
+    }
+    , function(erro){
+      res.status(400).json(erro);
+    }
+  );
 }
 
 var listar = function(req, res){
@@ -18,13 +25,15 @@ var listar = function(req, res){
 
 var autenticar = function(req, res){
   var usuario = req.body;
-  var usuarioAutenticado = usuarioService.autenticar(usuario);
-  if (usuarioAutenticado){
-    console.log(usuarioAutenticado);
-    res.status(200).json(usuarioAutenticado);
-  }else{
-    res.status(401).end();
-  }
+  usuarioService.autenticar(usuario,
+    function(usuarioAutenticado){
+      res.status(201).json(usuarioAutenticado);
+    }
+    , function(erro){
+      res.status(400).json(erro);
+    }
+  );
+
 }
 
 exports.cadastrar = cadastrar;
