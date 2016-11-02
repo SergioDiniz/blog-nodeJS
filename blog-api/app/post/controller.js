@@ -40,6 +40,20 @@ var buscarPostDoUsuario = function(req, res){
   );
 }
 
+var excluirPost = function(req, res){
+  var postID = req.params.postId;
+  var usuarioID = req.params.usuarioId;
+  postService.excluirPost(postID, usuarioID,
+    function(post){
+      res.status(200).json(post);
+    }
+    , function(err){
+      res.status(400).json(err);
+    }
+  );
+}
+
 exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
+exports.excluirPost = excluirPost;
