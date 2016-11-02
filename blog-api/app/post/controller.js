@@ -21,7 +21,7 @@ var cadastrarPost = function(req, res){
       res.status(201).json(resultado);
     }
     , function(err){
-      res.status(400).json(resultado);
+      res.status(400).json(err);
     }
   );
 }

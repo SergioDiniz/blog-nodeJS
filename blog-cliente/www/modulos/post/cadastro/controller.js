@@ -3,8 +3,16 @@ angular.module('blogjs.post').controller('NovoPostController', function($scope, 
   $scope.post = {};
 
   $scope.cadastrar = function(post){
-    posts.cadastrar(post);
-    $location.path('usuario/' + $routeParams.id + '/posts');
+    var usuarioId = $routeParams.id;
+    var promise = posts.cadastrar(post, usuarioId);
+
+    promise.then(function(response){
+      $location.path('usuario/' + usuarioId + '/posts');
+    });
+
+    promise.catch(function(response){
+      alert('Erro: ' + response.data.errors.conteudo.message);
+    });
   }
 
 });
