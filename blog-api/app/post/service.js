@@ -23,7 +23,20 @@ var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){
   });
 }
 
+var buscarPostDoUsuario = function(postId, usuarioId, quandoBuscar, quandoDerErro){
+  PostSchema
+    .findOne({_id:postId, dono:usuarioId})
+    .exec(function(err, post){
+      if (err){
+        quandoDerErro(err);
+      } else {
+        quandoBuscar(post);
+      }
+    });
+}
+
 
 
 exports.listarPostsDeUsuario = listarPostsDeUsuario;
 exports.cadastrarPost = cadastrarPost;
+exports.buscarPostDoUsuario = buscarPostDoUsuario;

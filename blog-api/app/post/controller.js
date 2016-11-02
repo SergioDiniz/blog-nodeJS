@@ -26,5 +26,20 @@ var cadastrarPost = function(req, res){
   );
 }
 
+
+var buscarPostDoUsuario = function(req, res){
+  var postID = req.params.postId;
+  var usuarioID = req.params.usuarioId;
+  postService.buscarPostDoUsuario(postID, usuarioID,
+    function(post){
+      res.status(200).json(post);
+    }
+    , function(err){
+      res.status(400).json(err);
+    }
+  );
+}
+
 exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
+exports.buscarPostDoUsuario = buscarPostDoUsuario;
