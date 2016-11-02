@@ -1,4 +1,4 @@
-angular.module('blogjs.post').factory('posts', function(){
+angular.module('blogjs.post').factory('posts', function($http){
 
   var cadastrar = function(post){
     post.id = getCurrentPostId() + 1;
@@ -8,7 +8,7 @@ angular.module('blogjs.post').factory('posts', function(){
   }
 
   var listar = function(id){
-    return getPosts().reverse();
+    return $http.get('http://localhost:9000/v1/usuarios/' + id + '/posts');
   }
 
   var buscarPost = function(id){

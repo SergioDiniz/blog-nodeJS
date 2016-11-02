@@ -2,7 +2,15 @@ angular.module('blogjs.post').controller('ListarPostController', function($scope
 
 
   var carregarPosts = function(){
-    $scope.posts = posts.listar();
+    var promise = posts.listar($routeParams.id);
+
+    promise.then(function(response){
+      $scope.posts = response.data;
+    });
+
+    promise.catch(function(response){
+      alert("Erro: " + response.data);
+    });
   }
 
   var carregarUsuario = function(){
