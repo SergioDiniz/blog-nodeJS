@@ -12,6 +12,17 @@ var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){
     });
 }
 
+var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){
+  PostSchema(post).save(function(err, resultado){
+    if(err){
+      quandoDerErro(err);
+    } else {
+      quandoCadastrar(resultado);
+    }
+  });
+}
+
 
 
 exports.listarPostsDeUsuario = listarPostsDeUsuario;
+exports.cadastrarPost = cadastrarPost;

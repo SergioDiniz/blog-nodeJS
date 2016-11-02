@@ -19,6 +19,7 @@ app.post('/v1/usuarios/auth', usuarioController.autenticar);
 app.get('/v1/usuarios/buscar/:id', usuarioController.buscar);
 
 app.get('/v1/usuarios/:usuarioId/posts', postController.listar);
+app.post('/v1/usuarios/:usuarioId/posts', postController.cadastrarPost);
 
 
 app.listen(9000, function(){

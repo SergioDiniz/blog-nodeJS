@@ -9,7 +9,7 @@ try {
 
 var cadastrar = function(usuario, quandoForCadastrar, quandoDerErro){
   usuario.senha = crypto.createHmac('sha256', usuario.senha).digest('hex');
-  new UsuarioSchema(usuario).save(function(erro, resultado){
+  UsuarioSchema(usuario).save(function(erro, resultado){
     if(erro){
       quandoDerErro(erro);
     } else {
