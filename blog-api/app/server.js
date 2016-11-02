@@ -1,5 +1,6 @@
 var express = require('express');
 var usuarioController = require('./usuario/controller');
+var postController = require('./post/controller');
 var dobyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
@@ -16,6 +17,8 @@ app.get('/v1/usuarios', usuarioController.listar);
 app.post('/v1/usuarios', usuarioController.cadastrar);
 app.post('/v1/usuarios/auth', usuarioController.autenticar);
 app.get('/v1/usuarios/buscar/:id', usuarioController.buscar);
+
+app.get('/v1/usuarios/:usuarioId/posts', postController.listar);
 
 
 app.listen(9000, function(){
