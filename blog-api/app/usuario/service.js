@@ -1,8 +1,14 @@
 var UsuarioSchema = require('./schema');
-
+var crypto;
+try {
+  crypto = require('crypto');
+} catch (err) {
+  console.log('crypto support is disabled!');
+}
 
 
 var cadastrar = function(usuario, quandoForCadastrar, quandoDerErro){
+  usuario.senha = crypto.createHmac('sha256', usuario.senha).digest('hex');
   new UsuarioSchema(usuario).save(function(erro, resultado){
     if(erro){
       quandoDerErro(erro);
@@ -28,6 +34,7 @@ var listar = function(paraListar, paraErro){
 }
 
 var autenticar = function(usuario, quandoAutenticar, quandoDerErro){
+  usuario.senha = crypto.createHmac('sha256', usuario.senha).digest('hex');
   var query = {login:usuario.login, senha:usuario.senha}
   UsuarioSchema
     .findOne(query)
