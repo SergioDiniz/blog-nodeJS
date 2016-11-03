@@ -1,7 +1,18 @@
 angular.module('blogjs.post').controller('VisualizarPostController', function($scope, $location, $routeParams, posts, usuarios){
 
   var carregarPost = function(){
-    $scope.post = posts.buscarPost(parseInt($routeParams.postId));
+    var usuarioId = $routeParams.id;
+    var postId = $routeParams.postId;
+    var promise = posts.buscarPost(usuarioId, postId);
+
+    promise.then(function(response){
+      $scope.post = response.data;
+    });
+
+    promise.catch(function(response){
+      alert('Erro: Não foi possivel carregar a postagem!');
+      $location.path('/usuario/' + usuarioId + '/posts');
+    });
   }
 
   var carregarUsuario = function(){
