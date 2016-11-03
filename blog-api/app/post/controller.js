@@ -13,6 +13,17 @@ var listar = function(req, res){
 }
 
 
+var listarTodosOsPosts = function(req, res){
+  postService.listarTodosOsPosts(
+    function(posts){
+      res.status(200).json(posts);
+    }
+    , function (err){
+      res.status(400).json(err);
+    }
+  );
+}
+
 var cadastrarPost = function(req, res){
   var post = req.body;
   post.dono = req.params.usuarioId;
@@ -57,3 +68,4 @@ exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
 exports.excluirPost = excluirPost;
+exports.listarTodosOsPosts = listarTodosOsPosts;

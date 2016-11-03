@@ -21,6 +21,13 @@
         </button> <a href="#" class="navbar-brand">BlogJS</a>
       </div>
       <div class="collapse navbar-collapse" ng-controller="MenuController">
+
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#/posts">Pesquisar Posts</a>
+          </li>
+        </ul>
+
         <ul class="nav navbar-nav" ng-hide="usuarioLogado">
           <li>
             <a href="#/usuario/cadastro">Cadastre-se</a>
@@ -86,5 +93,7 @@
   <script src="modulos/post/listar/controller.js"></script>
   <script src="modulos/post/cadastro/controller.js"></script>
   <script src="modulos/post/visualizar/controller.js"></script>
+  <script src="modulos/post/pesquisar/controller.js"></script>
+
 </body>
 </html>

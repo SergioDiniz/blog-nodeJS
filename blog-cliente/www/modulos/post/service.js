@@ -4,8 +4,12 @@ angular.module('blogjs.post').factory('posts', function($http){
     return $http.post('http://localhost:9000/v1/usuarios/'+ usuarioId +'/posts', post);
   }
 
-  var listar = function(id){
+  var listarPostDeUsuario = function(id){
     return $http.get('http://localhost:9000/v1/usuarios/' + id + '/posts');
+  }
+
+  var listarTodosOsPosts = function(){
+    return $http.get('http://localhost:9000/v1/posts');
   }
 
   var buscarPost = function(usuarioId, postId){
@@ -14,7 +18,8 @@ angular.module('blogjs.post').factory('posts', function($http){
 
   return {
     cadastrar:cadastrar,
-    listar:listar,
+    listarPostDeUsuario:listarPostDeUsuario,
+    listarTodosOsPosts:listarTodosOsPosts,
     buscarPost:buscarPost
   }
 

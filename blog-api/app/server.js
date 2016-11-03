@@ -22,6 +22,7 @@ app.get('/v1/usuarios/:usuarioId/posts', postController.listar);
 app.post('/v1/usuarios/:usuarioId/posts', postController.cadastrarPost);
 app.get('/v1/usuarios/:usuarioId/posts/:postId', postController.buscarPostDoUsuario);
 app.delete('/v1/usuarios/:usuarioId/posts/:postId', postController.excluirPost);
+app.get('/v1/posts', postController.listarTodosOsPosts);
 
 
 

@@ -13,6 +13,19 @@ var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){
     });
 }
 
+var listarTodosOsPosts = function(quandoListar, quandoDerErro){
+    PostSchema
+      .find()
+      .sort({dataPostagem:'desc'})
+      .exec(function(err, posts){
+        if (err){
+          quandoDerErro(err);
+        } else {
+          quandoListar(posts);
+        }
+      });
+}
+
 var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){
   PostSchema(post).save(function(err, resultado){
     if(err){
@@ -52,3 +65,4 @@ exports.listarPostsDeUsuario = listarPostsDeUsuario;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
 exports.excluirPost = excluirPost;
+exports.listarTodosOsPosts = listarTodosOsPosts;

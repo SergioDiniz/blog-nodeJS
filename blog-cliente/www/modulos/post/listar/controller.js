@@ -1,8 +1,8 @@
-angular.module('blogjs.post').controller('ListarPostController', function($scope, $location, $routeParams, posts, usuarios){
+angular.module('blogjs.post').controller('ListarPostUsuarioController', function($scope, $location, $routeParams, posts, usuarios){
 
 
   var carregarPosts = function(){
-    var promise = posts.listar($routeParams.id);
+    var promise = posts.listarPostDeUsuario($routeParams.id);
 
     promise.then(function(response){
       $scope.posts = response.data;
