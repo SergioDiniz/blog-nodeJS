@@ -13,29 +13,39 @@ var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){
     });
 }
 
-var listarTodosOsPosts = function(quandoListar, quandoDerErro){
+var listarTodosOsPosts = function(nPagina, limitePagina, quandoListar, quandoDerErro){
     PostSchema
-      .find()
-      .sort({dataPostagem:'desc'})
-      .exec(function(err, posts){
-        if (err){
-          quandoDerErro(err);
-        } else {
-          quandoListar(posts);
+      .paginate({},
+        {
+          page: nPagina,
+          limit: limitePagina,
+          sort: {dataPostagem:'desc'}
         }
-      });
+        , function(err, posts){
+            if (err){
+              quandoDerErro(err);
+            } else {
+              quandoListar(posts);
+            }
+        }
+    );
 }
 
-var listarPostComFiltro = function(filtro, quandoListar, quandoDerErro){
+var listarPostComFiltro = function(filtro, nPagina, limitePagina, quandoListar, quandoDerErro){
   PostSchema
-    .find({titulo: new RegExp(filtro, "i")})
-    .sort({dataPostagem: 'desc'})
-    .exec(function(err, posts){
-      if(err){
-        quandoDerErro(err);
-      } else {
-        quandoListar(posts);
+    .paginate(
+      {titulo: new RegExp(filtro, "i")},
+      {
+        page: nPagina,
+        limit: limitePagina,
+        sort: {dataPostagem:'desc'}
       }
+      , function(err, posts){
+          if(err){
+            quandoDerErro(err);
+          } else {
+            quandoListar(posts);
+          }
     });
 
 }

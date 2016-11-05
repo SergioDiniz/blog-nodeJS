@@ -15,8 +15,10 @@ var listar = function(req, res){
 
 var listarTodosOsPosts = function(req, res){
   var filtro = req.query.filtro;
+  var nPagina = req.query.pagina || 1;
+  var limitePagina = parseInt( req.query.limitePagina || 1 );
   if (filtro){
-    postService.listarPostComFiltro(filtro, 
+    postService.listarPostComFiltro(filtro, nPagina, limitePagina,
       function(posts){
         res.status(200).json(posts);
       }
@@ -25,7 +27,7 @@ var listarTodosOsPosts = function(req, res){
       }
     );
   }else{
-    postService.listarTodosOsPosts(
+    postService.listarTodosOsPosts(nPagina, limitePagina,
       function(posts){
         res.status(200).json(posts);
       }

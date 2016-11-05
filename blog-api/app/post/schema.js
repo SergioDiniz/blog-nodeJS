@@ -38,7 +38,7 @@ var postSchema = new Schema({
   }
 });
 
-schema.plugin(mongoosePaginate);
+postSchema.plugin(mongoosePaginate);
 
 var Post = mongoose.model('posts', postSchema);
 
