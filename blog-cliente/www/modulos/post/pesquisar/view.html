@@ -1,4 +1,5 @@
 <h1 class="text-center">Pesquisar Posts</h1>
+<br>
 
 <div class="col-md-offset-2 col-md-8">
 
@@ -6,9 +7,9 @@
     <div class="form-horizontal">
       <div class="form-group">
         <br>
-        <label for="filtro" class="col-sm-2 control-label">Filtar Posts</label>
+        <label for="filtro" class="col-sm-2 control-label">Filtrar Posts</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="filtro" 
+          <input type="text" class="form-control" id="filtro"
             ng-model="filtro"
             ng-model-options="{ debounce: 250 }"
             ng-change="atualizarPostFiltro()">

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 var Schema = mongoose.Schema;
 
 var comentarioSchema = new Schema({
@@ -37,6 +38,7 @@ var postSchema = new Schema({
   }
 });
 
+schema.plugin(mongoosePaginate);
 
 var Post = mongoose.model('posts', postSchema);
 
