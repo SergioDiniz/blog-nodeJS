@@ -31,4 +31,24 @@
     <br>
   </div>
 
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li ng-repeat="pag in imprimirNumeroDePaginas() track by $index" ng-class="{'active': $index+1 == paginaAtual}">
+        <a ng-click="">{{$index+1}}</a>
+      </li>
+      <li>
+        <a href="#" aria-label="Proximo">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <br>
+
 </div>

@@ -6,7 +6,10 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
     var promise = posts.listarTodosOsPosts($scope.filtro);
 
     promise.then(function(resultado){
-      $scope.posts = resultado.data;
+      var data = resultado.data;
+      $scope.paginaAtual = parseInt(data.page);
+      $scope.totalDePaginas = parseInt(data.pages);
+      $scope.posts = data.docs;
     });
 
     promise.catch(function(reulstado){
@@ -19,6 +22,10 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
     if($scope.filtro.length === 0 || $scope.filtro.length >= 3){
         carregarPosts();
     }
+  }
+
+  $scope.imprimirNumeroDePaginas = function(){
+    return new Array($scope.totalDePaginas);
   }
 
   carregarPosts();
