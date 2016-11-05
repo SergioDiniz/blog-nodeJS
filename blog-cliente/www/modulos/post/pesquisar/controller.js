@@ -1,5 +1,6 @@
 angular.module('blogjs.post').controller('PesquisarTodosOsPostController', function($scope, posts){
 
+  $scope.filtro = "";
 
   var carregarPosts = function(){
     var promise = posts.listarTodosOsPosts($scope.filtro);

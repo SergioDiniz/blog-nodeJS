@@ -14,14 +14,26 @@ var listar = function(req, res){
 
 
 var listarTodosOsPosts = function(req, res){
-  postService.listarTodosOsPosts(
-    function(posts){
-      res.status(200).json(posts);
-    }
-    , function (err){
-      res.status(400).json(err);
-    }
-  );
+  var filtro = req.query.filtro;
+  if (filtro){
+    postService.listarPostComFiltro(filtro, 
+      function(posts){
+        res.status(200).json(posts);
+      }
+      , function (err){
+        res.status(400).json(err);
+      }
+    );
+  }else{
+    postService.listarTodosOsPosts(
+      function(posts){
+        res.status(200).json(posts);
+      }
+      , function (err){
+        res.status(400).json(err);
+      }
+    );
+  }
 }
 
 var cadastrarPost = function(req, res){
