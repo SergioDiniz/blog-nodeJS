@@ -16,7 +16,9 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
   }
 
   $scope.atualizarPostFiltro = function(){
-    carregarPosts();
+    if($scope.filtro.length === 0 || $scope.filtro.length >= 3){
+        carregarPosts();
+    }
   }
 
   carregarPosts();
