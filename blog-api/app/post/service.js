@@ -96,6 +96,25 @@ var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){
     });
 }
 
+var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerErro){
+  PostSchema
+    .findById(postId)
+    .exec(function(err, post){
+      if(err){
+        quandoDerErro(err);
+      } else {
+        post.comentarios.push({usuario:comentario.usuario, conteudo: comentario.conteudo});
+        post.save(function(err){
+          if(err){
+            quandoDerErro(err);
+          } else{
+            quandoComentar(post);
+          }
+        });
+      }
+    });
+}
+
 
 exports.listarPostsDeUsuario = listarPostsDeUsuario;
 exports.cadastrarPost = cadastrarPost;
@@ -104,3 +123,4 @@ exports.buscarPostPorId = buscarPostPorId;
 exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;
 exports.listarPostComFiltro = listarPostComFiltro;
+exports.adicionarComentario = adicionarComentario;

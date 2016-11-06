@@ -91,9 +91,30 @@ var excluirPost = function(req, res){
   );
 }
 
+
+var adicionarComentario = function(req, res){
+  var postId = req.params.postId;
+  var comentario = req.body;
+
+  if(comentario && comentario.usuario && comentario.conteudo){
+    postService.adicionarComentario(postId, comentario
+      , function(post){
+        res.status(201).json(post);
+      }
+      , function(err){
+        res.status(400).json(err);
+      }
+    );
+  } else {
+    res.status(400).json({mensagem:'Comentario Invalido!'});
+  }
+
+}
+
 exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
 exports.buscarPostPorId = buscarPostPorId;
 exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;
+exports.adicionarComentario = adicionarComentario;

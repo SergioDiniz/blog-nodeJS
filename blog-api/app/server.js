@@ -24,6 +24,7 @@ app.get('/v1/usuarios/:usuarioId/posts/:postId', postController.buscarPostDoUsua
 app.delete('/v1/usuarios/:usuarioId/posts/:postId', postController.excluirPost);
 app.get('/v1/posts', postController.listarTodosOsPosts);
 app.get('/v1/posts/:postId', postController.buscarPostPorId);
+app.post('/v1/posts/:postId/comentarios', postController.adicionarComentario);
 
 
 
