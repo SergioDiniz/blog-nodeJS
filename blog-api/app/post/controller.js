@@ -65,6 +65,19 @@ var buscarPostDoUsuario = function(req, res){
   );
 }
 
+
+var buscarPostPorId = function(req, res){
+  var postID = req.params.postId;
+  postService.buscarPostPorId(postID,
+    function(post){
+      res.status(200).json(post);
+    }
+    , function(err){
+      res.status(400).json(err);
+    }
+  );
+}
+
 var excluirPost = function(req, res){
   var postID = req.params.postId;
   var usuarioID = req.params.usuarioId;
@@ -81,5 +94,6 @@ var excluirPost = function(req, res){
 exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
+exports.buscarPostPorId = buscarPostPorId;
 exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;

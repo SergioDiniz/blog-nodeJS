@@ -72,6 +72,18 @@ var buscarPostDoUsuario = function(postId, usuarioId, quandoBuscar, quandoDerErr
     });
 }
 
+var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){
+  PostSchema
+    .findById(postId)
+    .exec(function(err, post){
+      if (err){
+        quandoDerErro(err);
+      } else {
+        quandoBuscar(post);
+      }
+    });
+}
+
 var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){
   PostSchema
     .findOneAndRemove({_id:postId, dono:usuarioId})
@@ -88,6 +100,7 @@ var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){
 exports.listarPostsDeUsuario = listarPostsDeUsuario;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
+exports.buscarPostPorId = buscarPostPorId;
 exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;
 exports.listarPostComFiltro = listarPostComFiltro;
