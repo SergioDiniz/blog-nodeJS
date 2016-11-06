@@ -4,3 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+express	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var express = require('express');$/;"	variable	line:1
+usuarioController	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var usuarioController = require('.\/usuario\/controller');$/;"	variable	line:2
+postController	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var postController = require('.\/post\/controller');$/;"	variable	line:3
+dobyParser	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var dobyParser = require('body-parser');$/;"	variable	line:4
+cors	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var cors = require('cors');$/;"	variable	line:5
+mongoose	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var mongoose = require('mongoose');$/;"	variable	line:6
+serverConf	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var serverConf = require('.\/serverConf');$/;"	variable	line:7
+app	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var app = express();$/;"	variable	line:9

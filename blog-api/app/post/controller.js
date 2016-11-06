@@ -111,6 +111,24 @@ var adicionarComentario = function(req, res){
 
 }
 
+var atualizarPost = function(req, res){
+  var postNovo = req.body;
+  var postId = req.params.postId;
+  var usuarioId = req.params.usuarioId;
+
+  postNovo._id = postId;
+  postNovo.dono = usuarioId;
+
+  postService.atualizarPost(postNovo
+    , function(post){
+      res.status(200).json(post);
+    }
+    , function (err){
+      res.status(400).json(err);
+    }
+  );
+}
+
 exports.listar = listar;
 exports.cadastrarPost = cadastrarPost;
 exports.buscarPostDoUsuario = buscarPostDoUsuario;
@@ -118,3 +136,4 @@ exports.buscarPostPorId = buscarPostPorId;
 exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;
 exports.adicionarComentario = adicionarComentario;
+exports.atualizarPost = atualizarPost;

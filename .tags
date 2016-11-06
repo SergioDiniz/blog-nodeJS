@@ -61,3 +61,47 @@ div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/
 button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^          <button ng-click="canselarEdicao()" class="btn btn-danger">Canselar<\/button>$/;"	function	line:29
 button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^          <button ng-click="salvarEdicao(postEditado)" class="btn btn-primary">Salvar<\/button>$/;"	function	line:30
 br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^  <br>$/;"	function	line:35
+PostSchema	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var PostSchema = require('.\/schema');$/;"	variable	line:1
+listarPostsDeUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){$/;"	function	line:3
+listarPostsDeUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){$/;"	function	line:3
+listarTodosOsPosts	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarTodosOsPosts = function(nPagina, limitePagina, quandoListar, quandoDerErro){$/;"	function	line:16
+listarTodosOsPosts	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarTodosOsPosts = function(nPagina, limitePagina, quandoListar, quandoDerErro){$/;"	function	line:16
+listarPostComFiltro	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarPostComFiltro = function(filtro, nPagina, limitePagina, quandoListar, quandoDerErro){$/;"	function	line:34
+listarPostComFiltro	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var listarPostComFiltro = function(filtro, nPagina, limitePagina, quandoListar, quandoDerErro){$/;"	function	line:34
+cadastrarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){$/;"	function	line:53
+cadastrarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){$/;"	function	line:53
+buscarPostDoUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var buscarPostDoUsuario = function(postId, usuarioId, quandoBuscar, quandoDerErro){$/;"	function	line:63
+buscarPostDoUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var buscarPostDoUsuario = function(postId, usuarioId, quandoBuscar, quandoDerErro){$/;"	function	line:63
+buscarPostPorId	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){$/;"	function	line:75
+buscarPostPorId	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){$/;"	function	line:75
+excluirPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){$/;"	function	line:87
+excluirPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){$/;"	function	line:87
+adicionarComentario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerErro){$/;"	function	line:99
+adicionarComentario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerErro){$/;"	function	line:99
+atualizarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var atualizarPost = function(postNovo, quandoAtualizar, quandoDerErro){$/;"	function	line:121
+atualizarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/service.js	/^var atualizarPost = function(postNovo, quandoAtualizar, quandoDerErro){$/;"	function	line:121
+postService	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var postService = require('.\/service');$/;"	variable	line:1
+listar	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var listar = function(req, res){$/;"	function	line:3
+listar	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var listar = function(req, res){$/;"	function	line:3
+listarTodosOsPosts	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var listarTodosOsPosts = function(req, res){$/;"	function	line:16
+listarTodosOsPosts	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var listarTodosOsPosts = function(req, res){$/;"	function	line:16
+cadastrarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var cadastrarPost = function(req, res){$/;"	function	line:41
+cadastrarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var cadastrarPost = function(req, res){$/;"	function	line:41
+buscarPostDoUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var buscarPostDoUsuario = function(req, res){$/;"	function	line:55
+buscarPostDoUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var buscarPostDoUsuario = function(req, res){$/;"	function	line:55
+buscarPostPorId	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var buscarPostPorId = function(req, res){$/;"	function	line:69
+buscarPostPorId	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var buscarPostPorId = function(req, res){$/;"	function	line:69
+excluirPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var excluirPost = function(req, res){$/;"	function	line:81
+excluirPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var excluirPost = function(req, res){$/;"	function	line:81
+adicionarComentario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var adicionarComentario = function(req, res){$/;"	function	line:95
+adicionarComentario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var adicionarComentario = function(req, res){$/;"	function	line:95
+atualizarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var atualizarPost = function(req, res){$/;"	function	line:114
+atualizarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/post/controller.js	/^var atualizarPost = function(req, res){$/;"	function	line:114
+express	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var express = require('express');$/;"	variable	line:1
+usuarioController	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var usuarioController = require('.\/usuario\/controller');$/;"	variable	line:2
+postController	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var postController = require('.\/post\/controller');$/;"	variable	line:3
+dobyParser	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var dobyParser = require('body-parser');$/;"	variable	line:4
+cors	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var cors = require('cors');$/;"	variable	line:5
+mongoose	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var mongoose = require('mongoose');$/;"	variable	line:6
+serverConf	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var serverConf = require('.\/serverConf');$/;"	variable	line:7
+app	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-api/app/server.js	/^var app = express();$/;"	variable	line:9

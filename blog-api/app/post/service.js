@@ -104,6 +104,7 @@ var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerE
         quandoDerErro(err);
       } else {
         post.comentarios.push({usuario:comentario.usuario, conteudo: comentario.conteudo});
+
         post.save(function(err){
           if(err){
             quandoDerErro(err);
@@ -111,8 +112,33 @@ var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerE
             quandoComentar(post);
           }
         });
+
       }
     });
+}
+
+
+var atualizarPost = function(postNovo, quandoAtualizar, quandoDerErro){
+  PostSchema
+    .findOne({_id:postNovo._id, dono:postNovo.dono})
+    .exec(function(err, post){
+      if (err){
+        quandoDerErro(err);
+      } else{
+        post.titulo = postNovo.titulo;
+        post.conteudo = postNovo.conteudo;
+
+        post.save(function(err){
+          if (err){
+            quandoDerErro(err);
+          } else {
+            quandoAtualizar(post);
+          }
+        });
+
+      }
+    })
+
 }
 
 
@@ -124,3 +150,4 @@ exports.excluirPost = excluirPost;
 exports.listarTodosOsPosts = listarTodosOsPosts;
 exports.listarPostComFiltro = listarPostComFiltro;
 exports.adicionarComentario = adicionarComentario;
+exports.atualizarPost = atualizarPost;
