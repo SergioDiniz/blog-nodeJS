@@ -34,3 +34,30 @@ br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/w
 div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div>$/;"	function	line:50
 button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <button type="button" ng-click="comentar(comentario)" name="comentar" class="btn btn-primary pull-right">Comentar<\/button>$/;"	function	line:51
 br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <br><br><br><br><br><br>$/;"	function	line:53
+carregarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/controller.js	/^  var carregarPost = function(){$/;"	function	line:3
+carregarUsuario	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/controller.js	/^  var carregarUsuario = function(){$/;"	function	line:18
+habilitarEdicao	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/controller.js	/^  var habilitarEdicao = function(){$/;"	function	line:31
+canselarEdicao	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/controller.js	/^  var canselarEdicao = function(){$/;"	function	line:36
+salvarEdicao	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/controller.js	/^  var salvarEdicao = function(postEditado){$/;"	function	line:41
+h	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^<h1 class="text-center">Visualizar Posts<\/h1>$/;"	function	line:1
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^<div class="col-md-offset-2 col-md-8">$/;"	function	line:3
+a	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^  <a href="#\/usuario\/{{usuario._id}}\/posts">voltar para todos os  post<\/a>$/;"	function	line:4
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^  <div class="panel panel-default">$/;"	function	line:7
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^    <div class="panel-heading">$/;"	function	line:8
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^      <div>$/;"	function	line:9
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <div ng-bind="post.titulo" ng-if="!postSendoEditado"><\/div>$/;"	function	line:10
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <div ng-if="postSendoEditado">$/;"	function	line:11
+input	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^          <input type="text" class="form-control" ng-model="postEditado.titulo">$/;"	function	line:12
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^    <div class="panel-body">$/;"	function	line:16
+p	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^      <p ng-bind="post.conteudo" ng-if="!postSendoEditado"><\/p>$/;"	function	line:17
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^      <div ng-if="postSendoEditado" >$/;"	function	line:18
+textarea	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <textarea ng-model="postEditado.conteudo" class="form-control"  rows="6"><\/textarea>$/;"	function	line:19
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <br>$/;"	function	line:20
+small	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^      <small>{{post.dataPostagem | date:'hh:mm dd\/MM\/yyyy'}}<\/small>$/;"	function	line:23
+ul	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^    <ul class="list-group">$/;"	function	line:25
+li	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^      <li class="list-group-item">$/;"	function	line:26
+button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <button ng-if="!postSendoEditado" ng-click="habilitarEdicao()" class="btn btn-default">Editar<\/button>$/;"	function	line:27
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^        <div ng-if="postSendoEditado">$/;"	function	line:28
+button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^          <button ng-click="canselarEdicao()" class="btn btn-danger">Canselar<\/button>$/;"	function	line:29
+button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^          <button ng-click="salvarEdicao(postEditado)" class="btn btn-primary">Salvar<\/button>$/;"	function	line:30
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar_usuario/view.html	/^  <br>$/;"	function	line:35

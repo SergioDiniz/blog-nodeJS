@@ -27,6 +27,25 @@ angular.module('blogjs.post').controller('VisualizarPostUsuarioController', func
     });
   }
 
+
+  var habilitarEdicao = function(){
+    $scope.postSendoEditado = true;
+    $scope.postEditado = angular.copy($scope.post);
+  }
+
+  var canselarEdicao = function(){
+    $scope.postSendoEditado = false;
+    $scope.postEditado = {};
+  }
+
+  var salvarEdicao = function(postEditado){
+
+  }
+
+  $scope.postSendoEditado = false
+  $scope.habilitarEdicao = habilitarEdicao;
+  $scope.canselarEdicao = canselarEdicao;
+  $scope.salvarEdicao = salvarEdicao;
   carregarPost();
   carregarUsuario();
 });

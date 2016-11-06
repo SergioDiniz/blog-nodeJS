@@ -5,13 +5,32 @@
 
 
   <div class="panel panel-default">
-    <div class="panel-heading">{{post.titulo}}</div>
+    <div class="panel-heading">
+      <div>
+        <div ng-bind="post.titulo" ng-if="!postSendoEditado"></div>
+        <div ng-if="postSendoEditado">
+          <input type="text" class="form-control" ng-model="postEditado.titulo">
+        </div>
+      </div>
+    </div>
     <div class="panel-body">
-      <p>
-        {{post.conteudo}}
-      </p>
+      <p ng-bind="post.conteudo" ng-if="!postSendoEditado"></p>
+      <div ng-if="postSendoEditado" >
+        <textarea ng-model="postEditado.conteudo" class="form-control"  rows="6"></textarea>
+        <br>
+      </div>
+
       <small>{{post.dataPostagem | date:'hh:mm dd/MM/yyyy'}}</small>
     </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <button ng-if="!postSendoEditado" ng-click="habilitarEdicao()" class="btn btn-default">Editar</button>
+        <div ng-if="postSendoEditado">
+          <button ng-click="canselarEdicao()" class="btn btn-danger">Canselar</button>
+          <button ng-click="salvarEdicao(postEditado)" class="btn btn-primary">Salvar</button>
+        </div>
+      </li>
+    </ul>
   </div>
   <br>
 
