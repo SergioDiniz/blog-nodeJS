@@ -12,7 +12,6 @@ angular.module('blogjs.post').factory('posts', function($http){
     var url = '';
     url = pagina ? "http://localhost:9000/v1/posts?pagina=" + pagina + "&filtro=" + filtro
                  : 'http://localhost:9000/v1/posts?filtro=' + filtro;
-    console.log("url: " + url);
     return $http.get(url);
   }
 
@@ -20,11 +19,16 @@ angular.module('blogjs.post').factory('posts', function($http){
     return $http.get('http://localhost:9000/v1/usuarios/'+ usuarioId +'/posts/' + postId);
   }
 
+  var buscarPostPorId = function(postId){
+    return $http.get('http://localhost:9000/v1/posts/' + postId);
+  }
+
   return {
     cadastrar:cadastrar,
     listarPostDeUsuario:listarPostDeUsuario,
     listarTodosOsPosts:listarTodosOsPosts,
-    buscarPost:buscarPost
+    buscarPost:buscarPost,
+    buscarPostPorId:buscarPostPorId
   }
 
 });

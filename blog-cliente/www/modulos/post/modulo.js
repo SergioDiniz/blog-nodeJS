@@ -18,9 +18,14 @@ angular.module('blogjs.post').config(function($routeProvider){
       templateUrl: 'modulos/post/cadastro/view.html'
     })
 
-    .when('/usuario/:id/post/:postId', {
+    .when('/posts/:postId', {
       controller: 'VisualizarPostController',
       templateUrl: 'modulos/post/visualizar/view.html'
+    })
+
+    .when('/usuario/:id/posts/:postId', {
+      controller: 'VisualizarPostUsuarioController',
+      templateUrl: 'modulos/post/visualizar_usuario/view.html'
     })
 
 })
