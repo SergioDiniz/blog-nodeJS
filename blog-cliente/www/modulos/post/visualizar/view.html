@@ -16,60 +16,17 @@
 
   <div class="col-sm-12">
     <br>
-    <b>Comentários: {{post.comentarios.lenght || 0}}</b>
+    <b>Comentários: {{post.comentarios.length}}</b>
     <hr>
-    <div class="media">
-      <div class="media-left">
-        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> M </h2>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Media heading</h4>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
-      </div>
-      <br>
-    </div>
 
-    <div class="media">
+    <div class="media" ng-repeat="comentario in post.comentarios">
       <div class="media-left">
-        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> M </h2>
+        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> {{comentario.usuario[0]}} </h2>
       </div>
       <div class="media-body">
-        <h4 class="media-heading">Media heading</h4>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
-      </div>
-      <br>
-    </div>
-
-    <div class="media">
-      <div class="media-left">
-        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> M </h2>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Media heading</h4>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
-      </div>
-      <br>
-    </div>
-
-    <div class="media">
-      <div class="media-left">
-        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> M </h2>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Media heading</h4>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
+        <h4 class="media-heading">{{comentario.usuario}} <small>({{comentario.dataComentario | date: 'hh:mm - dd/MM/yyyy'}})</small></h4>
+        {{comentario.conteudo}}
+        <hr>
       </div>
       <br>
     </div>

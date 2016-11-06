@@ -1,0 +1,36 @@
+carregarPost	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/controller.js	/^  var carregarPost = function(){$/;"	function	line:3
+comentar	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/controller.js	/^  var comentar = function(comentario){$/;"	function	line:18
+h	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^<h1 class="text-center">Visualizar Posts<\/h1>$/;"	function	line:1
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^<div class="col-md-offset-2 col-md-8">$/;"	function	line:3
+a	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^  <a href="#\/posts">voltar para todos os  post<\/a>$/;"	function	line:4
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^  <div class="panel panel-default">$/;"	function	line:7
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div class="panel-heading">{{post.titulo}}<\/div>$/;"	function	line:8
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div class="panel-body">$/;"	function	line:9
+p	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <p>$/;"	function	line:10
+small	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <small>{{post.dataPostagem | date:'hh:mm dd\/MM\/yyyy'}}<\/small>$/;"	function	line:13
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^  <div class="col-sm-12">$/;"	function	line:17
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <br>$/;"	function	line:18
+b	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <b>Comentários: {{post.comentarios.length}}<\/b>$/;"	function	line:19
+hr	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <hr>$/;"	function	line:20
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div class="media" ng-repeat="comentario in post.comentarios">$/;"	function	line:22
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <div class="media-left">$/;"	function	line:23
+h	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^        <h2 class="media-object" style="padding-left:20px; padding-right:20px;"> {{comentario.usuario[0]}} <\/h2>$/;"	function	line:24
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <div class="media-body">$/;"	function	line:26
+h	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^        <h4 class="media-heading">{{comentario.usuario}} <small>({{comentario.dataComentario | date: 'hh:mm - dd\/MM\/yyyy'}})<\/small><\/h4>$/;"	function	line:27
+hr	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^        <hr>$/;"	function	line:29
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <br>$/;"	function	line:31
+hr	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <hr>$/;"	function	line:34
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^  <div class="col-sm-12">$/;"	function	line:37
+b	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <b>Responder.<\/b>$/;"	function	line:38
+hr	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <hr>$/;"	function	line:39
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div>$/;"	function	line:40
+label	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <label for="usuario">Digite seu nome:<\/label>$/;"	function	line:41
+input	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <input type="text" ng-model="comentario.usuario" id="usuario" placeholder="Digite seu nome" class="form-control">$/;"	function	line:42
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <br>$/;"	function	line:44
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div>$/;"	function	line:45
+label	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <label for="comentario">Digite seu comentario:<\/label>$/;"	function	line:46
+textarea	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <textarea id="comentario" ng-model="comentario.conteudo" rows="4" class="form-control" placeholder="Faça seu comentário"><\/textarea>$/;"	function	line:47
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <br>$/;"	function	line:49
+div	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <div>$/;"	function	line:50
+button	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^      <button type="button" ng-click="comentar(comentario)" name="comentar" class="btn btn-primary pull-right">Comentar<\/button>$/;"	function	line:51
+br	/Volumes/Arquivos/Sergio/Documentos/Estudos/NodeJS/blog-nodeJS/blog-cliente/www/modulos/post/visualizar/view.html	/^    <br><br><br><br><br><br>$/;"	function	line:53

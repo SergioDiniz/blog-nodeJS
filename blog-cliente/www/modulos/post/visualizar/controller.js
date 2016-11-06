@@ -14,5 +14,26 @@ angular.module('blogjs.post').controller('VisualizarPostController', function($s
     });
   }
 
+
+  var comentar = function(comentario){
+    var postId = $routeParams.postId;
+    var promise = posts.adicionarComentario(postId, comentario);
+
+    promise.then(function(response){
+      $scope.post = response.data;
+      $scope.comentario = {};
+    })
+
+    promise.catch(function(response){
+      if (response.data.mensagem) {
+        alert('Erro: ' + response.data.mensagem);
+      } else{
+        alert('Erro: ' + response.data);
+      }
+    });
+  }
+
+  $scope.comentar = comentar;
+
   carregarPost();
 });

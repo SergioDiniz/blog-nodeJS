@@ -28,4 +28,8 @@ angular.module('blogjs.post').config(function($routeProvider){
       templateUrl: 'modulos/post/visualizar_usuario/view.html'
     })
 
+    .otherwise({
+      redirectTo: '/posts'
+    })
+
 })

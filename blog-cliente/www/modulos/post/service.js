@@ -23,12 +23,17 @@ angular.module('blogjs.post').factory('posts', function($http){
     return $http.get('http://localhost:9000/v1/posts/' + postId);
   }
 
+  var adicionarComentario = function(postId, comentario){
+    return $http.post('http://localhost:9000/v1/posts/' + postId + '/comentarios', comentario);
+  }
+
   return {
     cadastrar:cadastrar,
     listarPostDeUsuario:listarPostDeUsuario,
     listarTodosOsPosts:listarTodosOsPosts,
     buscarPost:buscarPost,
-    buscarPostPorId:buscarPostPorId
+    buscarPostPorId:buscarPostPorId,
+    adicionarComentario:adicionarComentario
   }
 
 });
