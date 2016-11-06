@@ -33,18 +33,33 @@ angular.module('blogjs.post').controller('VisualizarPostUsuarioController', func
     $scope.postEditado = angular.copy($scope.post);
   }
 
-  var canselarEdicao = function(){
+  var cancelarEdicao = function(){
     $scope.postSendoEditado = false;
     $scope.postEditado = {};
   }
 
   var salvarEdicao = function(postEditado){
+    var usuarioId = $routeParams.id;
+    var postId = $routeParams.postId;
+    var postNovo = $scope.postEditado;
+
+    var promise = posts.atualizarPost(postNovo, usuarioId, postId);
+
+    promise.then(function(response){
+      $scope.post = response.data;
+      cancelarEdicao();
+    });
+
+    promise.catch(function(response){
+      alert('Erro ao Atualizar!');
+      console.log(response.data);
+    });
 
   }
 
   $scope.postSendoEditado = false
   $scope.habilitarEdicao = habilitarEdicao;
-  $scope.canselarEdicao = canselarEdicao;
+  $scope.cancelarEdicao = cancelarEdicao;
   $scope.salvarEdicao = salvarEdicao;
   carregarPost();
   carregarUsuario();

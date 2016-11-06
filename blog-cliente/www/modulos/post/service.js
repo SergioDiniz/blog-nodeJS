@@ -4,6 +4,10 @@ angular.module('blogjs.post').factory('posts', function($http){
     return $http.post('http://localhost:9000/v1/usuarios/'+ usuarioId +'/posts', post);
   }
 
+  var atualizarPost = function(postNovo, usuarioId, postId){
+    return $http.put('http://localhost:9000/v1/usuarios/'+ usuarioId +'/posts/' + postId, postNovo);
+  }
+
   var listarPostDeUsuario = function(id){
     return $http.get('http://localhost:9000/v1/usuarios/' + id + '/posts');
   }
@@ -33,7 +37,8 @@ angular.module('blogjs.post').factory('posts', function($http){
     listarTodosOsPosts:listarTodosOsPosts,
     buscarPost:buscarPost,
     buscarPostPorId:buscarPostPorId,
-    adicionarComentario:adicionarComentario
+    adicionarComentario:adicionarComentario,
+    atualizarPost:atualizarPost
   }
 
 });
