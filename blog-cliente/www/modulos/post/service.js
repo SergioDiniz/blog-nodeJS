@@ -8,8 +8,12 @@ angular.module('blogjs.post').factory('posts', function($http){
     return $http.get('http://localhost:9000/v1/usuarios/' + id + '/posts');
   }
 
-  var listarTodosOsPosts = function(filtro){
-    return $http.get('http://localhost:9000/v1/posts?filtro=' + filtro);
+  var listarTodosOsPosts = function(filtro, pagina){
+    var url = '';
+    url = pagina ? "http://localhost:9000/v1/posts?pagina=" + pagina + "&filtro=" + filtro
+                 : 'http://localhost:9000/v1/posts?filtro=' + filtro;
+    console.log("url: " + url);
+    return $http.get(url);
   }
 
   var buscarPost = function(usuarioId, postId){

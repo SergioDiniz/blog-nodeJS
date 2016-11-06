@@ -16,9 +16,9 @@ var listar = function(req, res){
 var listarTodosOsPosts = function(req, res){
   var filtro = req.query.filtro;
   var nPagina = req.query.pagina || 1;
-  var limitePagina = parseInt( req.query.limitePagina || 1 );
+  var limitePorPagina = parseInt( req.query.limitePorPagina || 3 );
   if (filtro){
-    postService.listarPostComFiltro(filtro, nPagina, limitePagina,
+    postService.listarPostComFiltro(filtro, nPagina, limitePorPagina,
       function(posts){
         res.status(200).json(posts);
       }
@@ -27,7 +27,7 @@ var listarTodosOsPosts = function(req, res){
       }
     );
   }else{
-    postService.listarTodosOsPosts(nPagina, limitePagina,
+    postService.listarTodosOsPosts(nPagina, limitePorPagina,
       function(posts){
         res.status(200).json(posts);
       }

@@ -3,7 +3,7 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
   $scope.filtro = "";
 
   var carregarPosts = function(){
-    var promise = posts.listarTodosOsPosts($scope.filtro);
+    var promise = posts.listarTodosOsPosts($scope.filtro, $scope.paginaAtual);
 
     promise.then(function(resultado){
       var data = resultado.data;
@@ -12,7 +12,7 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
       $scope.posts = data.docs;
     });
 
-    promise.catch(function(reulstado){
+    promise.catch(function(resultado){
       alert('Erro ao tentar carregar Posts!');
     })
 
@@ -20,7 +20,15 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
 
   $scope.atualizarPostFiltro = function(){
     if($scope.filtro.length === 0 || $scope.filtro.length >= 3){
+      $scope.paginaAtual = 1;
         carregarPosts();
+    }
+  }
+
+  $scope.mudarPagina = function(pagina){
+    if( pagina > 0 && pagina <= $scope.totalDePaginas){
+      $scope.paginaAtual = parseInt(pagina);
+      carregarPosts();
     }
   }
 
