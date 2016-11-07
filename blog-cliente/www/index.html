@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" media="screen" title="bootstrap">
   <style media="screen">
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+
       a.disabled {
         cursor: not-allowed !important;
         pointer-events: none;
@@ -15,7 +19,7 @@
   </style>
   <title>Blog JS</title>
 </head>
-<body ng-app="blogjs">
+<body ng-app="blogjs" ng-cloak>
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">

@@ -1,4 +1,5 @@
 var PostSchema = require('./schema');
+var UsuarioSchema = require('../usuario/schema');
 
 var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){
   PostSchema
@@ -79,9 +80,31 @@ var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){
       if (err){
         quandoDerErro(err);
       } else {
-        quandoBuscar(post);
+        UsuarioSchema
+          .findById({_id:post.dono})
+          .select({nome:true, login:true})
+          .exec(function(err, usuario){
+            if(err){
+              quandoDerErro(err);
+            } else {
+              post.dono = usuario.nome;
+              // console.log(JSON.stringify(usuario));
+              quandoBuscar(post);
+            }
+          });
+
+
       }
-    });
+    })
+    // .aggregate({
+    //   $lookup:
+    //   {
+    //     from: 'usuarios',
+    //     localField: 'dono',
+    //     foreignField: '_id',
+    //     as: 'dono'
+    //   }
+    // });
 }
 
 var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){
