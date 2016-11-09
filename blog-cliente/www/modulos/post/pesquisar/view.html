@@ -22,9 +22,7 @@
     <div class="panel panel-default">
       <div class="panel-heading"><a ng-href="#/posts/{{post._id}}">{{post.titulo}}</a></div>
       <div class="panel-body">
-        <p>
-          {{post.conteudo}}
-        </p>
+        <div ng-bind-html="post.conteudo"></div>
         <small>{{post.dataPostagem | date:'hh:mm dd/MM/yyyy'}}</small>
       </div>
     </div>

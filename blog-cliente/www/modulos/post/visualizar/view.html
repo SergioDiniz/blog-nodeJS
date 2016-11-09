@@ -1,14 +1,12 @@
-<h1 class="text-center">Visualizar Posts</h1>
+<h1 class="text-center">{{post.titulo}}</h1>
+<p ng-cloak class="text-center" ng-bind-html="'autor: <b>' + post.dono + '</b>'"></p>
 
 <div class="col-md-offset-2 col-md-8" ng-cloak>
-  <a href="#/posts">voltar para todos os  post</a>
-
-
+  
   <div class="panel panel-default">
-    <div class="panel-heading">{{post.titulo}} <b>({{post.dono}})</b></div>
     <div class="panel-body">
       <div ng-bind-html="post.conteudo" ></div>
-      <small>{{post.dataPostagem | date:'hh:mm dd/MM/yyyy'}}</small>
+      <small>data: {{post.dataPostagem | date:'hh:mm dd/MM/yyyy'}}</small>
     </div>
   </div>
 
