@@ -14,9 +14,9 @@
       </div>
     </div>
     <div class="panel-body">
-      <p ng-bind="post.conteudo" ng-if="!postSendoEditado"></p>
+      <p ng-bind-html="post.conteudo" ng-if="!postSendoEditado"></p>
       <div ng-if="postSendoEditado" >
-        <textarea ng-model="postEditado.conteudo" class="form-control"  rows="6"></textarea>
+        <div text-angular ng-model="postEditado.conteudo" ></div>
         <br>
       </div>
 

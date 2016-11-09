@@ -1,6 +1,6 @@
 <h1 class="text-center">Novo Posts</h1>
 <br>
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
   <form>
     <div class="form-group">
       <label for="titulo">Titulo</label>
@@ -8,9 +8,10 @@
     </div>
     <div class="form-group">
       <label for="descricao">Descrição</label>
-      <textarea class="form-control" rows="3" id="descricao" ng-model="post.conteudo"></textarea>
+      <div text-angular ng-model="post.conteudo" ></div>
     </div>
 
     <button class="btn btn-lg btn-default btn-block" ng-click="cadastrar(post)">Cadastra-se</button>
   </form>
+  <br><br>
 </div>

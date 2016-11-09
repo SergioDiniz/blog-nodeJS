@@ -12,7 +12,8 @@
     "angular": "angularjs#^1.5.8",
     "angular-route": "^1.5.8",
     "angular-bootstrap": "^2.2.0",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "textAngular": "^1.5.12"
   },
   "private": true,
   "ignore": [
