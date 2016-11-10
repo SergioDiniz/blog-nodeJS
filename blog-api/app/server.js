@@ -1,35 +1,17 @@
 var express = require('express');
-var usuarioController = require('./usuario/controller');
-var postController = require('./post/controller');
 var dobyParser = require('body-parser');
 var cors = require('cors');
-var mongoose = require('mongoose');
-var serverConf = require('./serverConf');
+require('./mongodb/connect');
+var usuarioRouters = require('./usuario/routers');
+var postRouters = require('./post/routers');
 
 var app = express();
 app.use(dobyParser.json());
 app.use(cors());
+app.use(usuarioRouters);
+app.use(postRouters);
 
-mongoose.Promise = global.Promise; //para a mensagem DeprecationWarning: Mongoose: mpromise
-mongoose.connect('mongodb://' + serverConf.getdbuser() + ':' + serverConf.getdbpassword() + '@ds139327.mlab.com:39327/blogjs');
-
-app.get('/v1/usuarios', usuarioController.listar);
-app.post('/v1/usuarios', usuarioController.cadastrar);
-app.post('/v1/usuarios/auth', usuarioController.autenticar);
-app.get('/v1/usuarios/buscar/:id', usuarioController.buscar);
-
-app.get('/v1/usuarios/:usuarioId/posts', postController.listar);
-app.post('/v1/usuarios/:usuarioId/posts', postController.cadastrarPost);
-app.put('/v1/usuarios/:usuarioId/posts/:postId', postController.atualizarPost);
-app.get('/v1/usuarios/:usuarioId/posts/:postId', postController.buscarPostDoUsuario);
-app.delete('/v1/usuarios/:usuarioId/posts/:postId', postController.excluirPost);
-app.get('/v1/posts', postController.listarTodosOsPosts);
-app.get('/v1/posts/:postId', postController.buscarPostPorId);
-app.post('/v1/posts/:postId/comentarios', postController.adicionarComentario);
-
-
-
-
-app.listen(9000, function(){
+var porta = process.env.PORT || 9000;
+app.listen(porta, function(){
   console.log('Servidor rodando em: localhost:9000');
 })

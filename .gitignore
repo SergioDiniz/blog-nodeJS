@@ -39,4 +39,4 @@ blog-api/.bower-tmp
 ### Node ###
 # Dependency directories
 blog-api/node_modules
-blog-api/app/serverConf.js
+blog-api/app/mongodb/connectConfig.js
