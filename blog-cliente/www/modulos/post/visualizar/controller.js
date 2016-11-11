@@ -35,5 +35,8 @@ angular.module('blogjs.post').controller('VisualizarPostController', function($s
 
   $scope.comentar = comentar;
 
-  carregarPost();
+  $scope.init = function(){
+    carregarPost();
+  }
+
 });

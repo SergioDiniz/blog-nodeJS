@@ -1,12 +1,12 @@
-angular.module('blogjs.usuario').factory('usuarios', function($http){
+angular.module('blogjs.usuario').factory('usuarios', function($http, urlApi){
 
   var cadastrar = function(usuario){
-    return $http.post('http://localhost:9000/v1/usuarios', usuario);
+    return $http.post(urlApi + '/v1/usuarios', usuario);
   }
 
   var autenticaUsuario = function(usuario){
 
-    var autenticado = $http.post('http://localhost:9000/v1/usuarios/auth', usuario);
+    var autenticado = $http.post(urlApi + '/v1/usuarios/auth', usuario);
 
     autenticado.then(function(response){
       var usuario = response.data;
@@ -17,7 +17,7 @@ angular.module('blogjs.usuario').factory('usuarios', function($http){
   }
 
   var buscarUsuario = function(id){
-    return $http.get('http://localhost:9000/v1/usuarios/buscar/' + id);
+    return $http.get(urlApi + '/v1/usuarios/buscar/' + id);
   }
 
 

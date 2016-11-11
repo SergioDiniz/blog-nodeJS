@@ -57,10 +57,13 @@ angular.module('blogjs.post').controller('VisualizarPostUsuarioController', func
 
   }
 
-  $scope.postSendoEditado = false
-  $scope.habilitarEdicao = habilitarEdicao;
-  $scope.cancelarEdicao = cancelarEdicao;
-  $scope.salvarEdicao = salvarEdicao;
-  carregarPost();
-  carregarUsuario();
+
+  $scope.init = function(){
+    $scope.postSendoEditado = false
+    $scope.habilitarEdicao = habilitarEdicao;
+    $scope.cancelarEdicao = cancelarEdicao;
+    $scope.salvarEdicao = salvarEdicao;
+    carregarPost();
+    carregarUsuario();
+  }
 });

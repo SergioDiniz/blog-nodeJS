@@ -25,6 +25,9 @@ angular.module('blogjs.post').controller('ListarPostUsuarioController', function
     });
   }
 
-  carregarPosts();
-  carregarUsuario();
+  $scope.init = function(){
+    carregarPosts();
+    carregarUsuario();
+  }
+
 });

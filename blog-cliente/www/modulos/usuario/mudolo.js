@@ -1,6 +1,6 @@
-angular.module('blogjs.usuario', []);
+angular.module('blogjs.usuario', [])
 
-angular.module('blogjs.usuario').config(function($routeProvider){
+.config(function($routeProvider){
 
   $routeProvider
     .when('/usuario/cadastro', {

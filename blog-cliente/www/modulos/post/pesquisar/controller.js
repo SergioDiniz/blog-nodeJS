@@ -36,6 +36,9 @@ angular.module('blogjs.post').controller('PesquisarTodosOsPostController', funct
     return new Array($scope.totalDePaginas);
   }
 
-  carregarPosts();
+  $scope.init = function(){
+    carregarPosts();
+  }
+
 
 });
