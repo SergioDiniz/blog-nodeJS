@@ -1,52 +1,24 @@
 var usuarioService = require('./service');
+var respostas = require ('../util/respostas');
 
 var cadastrar = function(req, res){
   var usuario = req.body;
-  usuarioService.cadastrar(usuario,
-    function(resultado){
-      res.status(201).json(resultado);
-    }
-    , function(erro){
-      res.status(400).json(erro);
-    }
-  );
+  usuarioService.cadastrar(usuario, respostas.created(res), respostas.error(res) );
 }
 
 var listar = function(req, res){
-  usuarioService.listar(
-  function(usuarios){
-    res.status(200).json(usuarios);
-  }
-  , function(erro){
-    res.status(400).json(erro);
-  }
-  );
+  usuarioService.listar(respostas.ok(res), respostas.error(res));
 }
 
 var autenticar = function(req, res){
   var usuario = req.body;
-  usuarioService.autenticar(usuario,
-    function(usuarioAutenticado){
-      res.status(201).json(usuarioAutenticado);
-    }
-    , function(erro){
-      res.status(400).json(erro);
-    }
-  );
+  usuarioService.autenticar(usuario, respostas.ok(res), respostas.error(res) );
 
 }
 
-
 var buscar = function(req, res){
   var id = req.params.id;
-  usuarioService.buscar(id,
-    function(usuarioEncontrado){
-      res.status(200).json(usuarioEncontrado);
-    }
-    , function(erro){
-      res.status(400).json(erro);
-    }
-  );
+  usuarioService.buscar(id,respostas.ok(res), respostas.error(res) );
 }
 
 exports.cadastrar = cadastrar;

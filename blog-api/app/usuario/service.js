@@ -1,4 +1,6 @@
 var UsuarioSchema = require('./schema');
+var respostas = require ('../util/respostas');
+
 var crypto;
 try {
   crypto = require('crypto');
@@ -9,13 +11,7 @@ try {
 
 var cadastrar = function(usuario, quandoForCadastrar, quandoDerErro){
   usuario.senha = crypto.createHmac('sha256', usuario.senha).digest('hex');
-  UsuarioSchema(usuario).save(function(erro, resultado){
-    if(erro){
-      quandoDerErro(erro);
-    } else {
-      quandoForCadastrar(resultado);
-    }
-  })
+  UsuarioSchema(usuario).save(respostas.tratarRespostaService(quandoForCadastrar, quandoDerErro));
 }
 
 var listar = function(paraListar, paraErro){
@@ -23,13 +19,7 @@ var listar = function(paraListar, paraErro){
   UsuarioSchema
     .find()
     .select({nome:true, login:true})
-    .exec(function(err, usuarios){
-     if(err){
-       paraErro(err);
-     }else{
-       paraListar(usuarios);
-     }
-    })
+    .exec(respostas.tratarRespostaService(paraListar, quandoDerErro));
 
 }
 
