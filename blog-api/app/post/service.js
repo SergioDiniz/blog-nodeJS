@@ -1,17 +1,21 @@
 var PostSchema = require('./schema');
 var UsuarioSchema = require('../usuario/schema');
 
+var tratarResposta = function(tratarResultado, tratarErro){
+  return function(erro, resultado){
+    if (erro){
+      tratarErro(erro);
+    } else {
+      tratarResultado(resultado);
+    }
+  }
+}
+
 var listarPostsDeUsuario = function(usuarioId, quandoListar, quandoDerErro){
   PostSchema
     .find({dono:usuarioId})
     .sort({dataPostagem:'desc'})
-    .exec(function(err, posts){
-       if (err){
-         quandoDerErro(err);
-       } else {
-         quandoListar(posts);
-       }
-    });
+    .exec(tratarResposta(quandoListar, quandoDerErro));
 }
 
 var listarTodosOsPosts = function(nPagina, limitePagina, quandoListar, quandoDerErro){
@@ -22,13 +26,7 @@ var listarTodosOsPosts = function(nPagina, limitePagina, quandoListar, quandoDer
           limit: limitePagina,
           sort: {dataPostagem:'desc'}
         }
-        , function(err, posts){
-            if (err){
-              quandoDerErro(err);
-            } else {
-              quandoListar(posts);
-            }
-        }
+        , tratarResposta(quandoListar, quandoDerErro)
     );
 }
 
@@ -41,36 +39,18 @@ var listarPostComFiltro = function(filtro, nPagina, limitePagina, quandoListar, 
         limit: limitePagina,
         sort: {dataPostagem:'desc'}
       }
-      , function(err, posts){
-          if(err){
-            quandoDerErro(err);
-          } else {
-            quandoListar(posts);
-          }
-    });
+      , tratarResposta(quandoListar, quandoDerErro));
 
 }
 
 var cadastrarPost = function(post, quandoCadastrar, quandoDerErro){
-  PostSchema(post).save(function(err, resultado){
-    if(err){
-      quandoDerErro(err);
-    } else {
-      quandoCadastrar(resultado);
-    }
-  });
+  PostSchema(post).save(tratarResposta(quandoCadastrar, quandoDerErro));
 }
 
 var buscarPostDoUsuario = function(postId, usuarioId, quandoBuscar, quandoDerErro){
   PostSchema
     .findOne({_id:postId, dono:usuarioId})
-    .exec(function(err, post){
-      if (err){
-        quandoDerErro(err);
-      } else {
-        quandoBuscar(post);
-      }
-    });
+    .exec(tratarResposta(quandoBuscar, quandoDerErro));
 }
 
 var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){
@@ -110,13 +90,7 @@ var buscarPostPorId = function(postId, quandoBuscar, quandoDerErro){
 var excluirPost = function(postId, usuarioId, quandoBuscar, quandoDerErro){
   PostSchema
     .findOneAndRemove({_id:postId, dono:usuarioId})
-    .exec(function(err, post){
-      if (err){
-        quandoDerErro(err);
-      } else {
-        quandoBuscar(post);
-      }
-    });
+    .exec(tratarResposta(quandoBuscar, quandoDerErro));
 }
 
 var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerErro){
@@ -128,13 +102,7 @@ var adicionarComentario= function(postId, comentario, quandoComentar, quandoDerE
       } else {
         post.comentarios.push({usuario:comentario.usuario, conteudo: comentario.conteudo});
 
-        post.save(function(err){
-          if(err){
-            quandoDerErro(err);
-          } else{
-            quandoComentar(post);
-          }
-        });
+        post.save(tratarResposta(quandoComentar, quandoDerErro));
 
       }
     });
@@ -151,13 +119,7 @@ var atualizarPost = function(postNovo, quandoAtualizar, quandoDerErro){
         post.titulo = postNovo.titulo;
         post.conteudo = postNovo.conteudo;
 
-        post.save(function(err){
-          if (err){
-            quandoDerErro(err);
-          } else {
-            quandoAtualizar(post);
-          }
-        });
+        post.save(tratarResposta(quandoAtualizar, quandoDerErro));
 
       }
     })
